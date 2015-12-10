@@ -1,6 +1,7 @@
 package com.epam.javatraining.collectionsutility;
 
-import java.util.Collection;
+import java.util.Arrays;
+import java.util.List;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -21,13 +22,21 @@ public class CollectionsUtilityTest {
     }
 
     @Test
-    public void testAvg() {
-        System.out.println("avg");
-        Collection inputElements = null;
-        CollectionsUtility instance = new CollectionsUtility();
-        Object expResult = null;
-        Object result = instance.avg(inputElements);
-        assertEquals(expResult, result);
+    public void testAvgInt() {
+        System.out.println("avg Integer");
+        List<Integer> intList = Arrays.asList(5, 19, 0, 125, 10);
+        CollectionsUtility avgElement = new CollectionsUtility();
+        int result = avgElement.avg(intList);
+        assertEquals(10, result); 
+    }
+    
+    @Test
+    public void testAvgString() {
+        System.out.println("avg String");
+        List<String> strList = Arrays.asList("ann", "mua", "buuu");
+        CollectionsUtility avgElement = new CollectionsUtility();
+        String resultStr = avgElement.avg(strList);
+        assertEquals("buuu", resultStr); 
     }
 
 }
